@@ -1,7 +1,11 @@
 # ME Binaries
 
 This repository exposes Avro modificated binaries compiled from
-[this other git repository][modified-avro].
+[this other git repository][modified-avro]. Modified binaries are now exposed as
+version 1.9.1-SNAPSHOT. This is true only to the artifacts which were modified:
+
+- avro-compiler
+- avro-maven-plugin
 
 ### Depend on it
 
@@ -23,5 +27,16 @@ looking for:
 
 Note: `<repositories>` and `<repository>` tags could be changed for
 `<pluginRepositories>` and `<pluginRepository>` as you wish.
+
+Do not forget modifying depencies on avro-maven-plugin and / or avro-compiler to
+modified version. For instance:
+
+```xml
+<dependency>
+  <groupId>org.apache.avro</groupId>
+  <artifactId>avro-compiler</artifactId> <!-- or avro-maven-plugin -->
+  <version>1.9.1-SNAPSHOT</version>
+</dependency>
+```
 
 [modified-avro]: https://github.com/geteloquent/avro
